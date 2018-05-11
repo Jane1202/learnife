@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0 auto;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+        }
+        .parent{
+            position: relative;
+            margin:150px auto;
+            height: 200px;
+            width: 600px;
+        }
+        #box0{
+            position: absolute;
+            left: 0;
+            top: 20%;
+            line-height: 68px;
+            width: 60px;
+            border: 1px solid #ebebeb;
+            background: #f7f6f6;
+        }
+        #box1{
+            position: absolute;
+            left: 16%;
+            top: 20%;
+            line-height: 68px;
+            width: 60px;
+            border: 1px solid #ebebeb;
+            background: #f7f6f6;
+            transform: skew(30deg);
+        }
+        #box2{
+            position: absolute;
+            left: 32%;
+            top: 20%;
+            line-height: 68px;
+            width: 60px;
+            border: 1px solid #ebebeb;
+            background: #f7f6f6;
+            transform: scaleX(0.5);
+        }
+        #box3{
+            position: absolute;
+            left: 48%;
+            top: 20%;
+            line-height: 68px;
+            width: 60px;
+            border: 1px solid #ebebeb;
+            background: #f7f6f6;
+            transform: rotate(45deg);
+        }
+        #box4{
+            position: absolute;
+            left: 64%;
+            top: 20%;
+            line-height: 68px;
+            width: 60px;
+            border: 1px solid #ebebeb;
+            background: #f7f6f6;
+            transform: translate(10px,20px);
+        }
+        #box5{
+            position: absolute;
+            left: 80%;
+            top: 20%;
+            line-height: 68px;
+            width: 60px;
+            border: 1px solid #ebebeb;
+            background: #f7f6f6;
+            transform: scaleX(0.5) skew(30deg) rotate(45deg) translate(10px,20px);
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div id="box0">box0</div>
+        <div id="box1">box1</div>
+        <div id="box2">box2</div>
+        <div id="box3">box3</div>
+        <div id="box4">box4</div>
+        <div id="box5">box5</div>
+    </div>
+</body>
+</html>
