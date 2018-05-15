@@ -7,44 +7,54 @@
     <title>Document</title>
     <style>
         .container{
-            height: 100%;
-            width: 100%;
-            margin: 0 auto;
+            height: 420px;
+            width: 300px;
+            margin: 100px auto;
+            padding: 0;
+            position: relative;
             perspective: 900px;
             -webkit-perspective: 900px;
         }
-        .box{
-            margin: 100px auto;
+        .img1,.img2{
+            position: absolute;
+            left: 0;
+            top: 0;
             height: 420px;
             width: 300px;
-            transition: transform 2s;
+            background-size: 300px 420px;
+            -moz-background-size: 300px 420px;
+            background-repeat:no-repeat;
+            backface-visibility:hidden;
+            -webkit-backface-visibility:hidden;
+            -moz-backface-visibility:hidden; 
+            -ms-backface-visibility:hidden;
+            transition: 1s;
         }
-        .box:hover{
+        .img1{
+            background-image: url('img_1_4_1.jpg');
+        }
+        .img2{
+            background-image: url('img_1_4_2.jpg');
+            transform: rotateY(-180deg);
+            -webkit-transform: rotateY(-180deg);
+            -moz-transform: rotateY(-180deg);
+        }
+        .container:hover .img1{
             transform: rotateY(180deg);
             -webkit-transform: rotateY(180deg);
             -moz-transform: rotateY(180deg);
         }
-        .box:hover .img{
-            height: 100%;
-            background-image: url('反面.jpg');
-            background-size: 300px 420px;
-            background-repeat:no-repeat;
-        }
-        .img{
-            height: 100%;
-            background-image: url('正面.jpg');
-            background-size: 300px 420px;
-            -moz-background-size: 300px 420px;
-            background-repeat:no-repeat;
-            transition: background-image 0s 0.6s;
+        .container:hover .img2{
+            transform: rotateY(0deg);
+            -webkit-transform: rotateY(0deg);
+            -moz-transform: rotateY(0deg);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="box">
-            <div class="img"></div>
-        </div>
+        <div class="img1"></div>
+        <div class="img2"></div>
     </div>
 </body>
 </html>
