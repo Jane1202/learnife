@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @keyframes rotate {
+            100% {
+                transform: rotateY(-360deg);
+            }
+        }
+        @-moz-keyframes rotate {
+            100% {
+                transform: rotateY(-360deg);
+            }
+        }
+        @-webkit-keyframes rotate {
+            100% {
+                transform: rotateY(-360deg);
+            }
+        }
+        @-o-keyframes rotate {
+            100% {
+                transform: rotateY(-360deg);
+            }
+        }
+        body{
+            background: black;
+        }
+        .container{
+            position: relative;
+            height: 500px;
+            width: 500px;
+            margin: 100px auto;
+            perspective: 900px;
+            -webkit-perspective: 400px;
+        }
+        .stage{
+            position: relative;
+            top: 30%;
+            height: 200px;
+            width: 200px;
+            margin: 0 auto;
+            transform-style:preserve-3d;
+        }
+        .stage:hover{
+            animation: rotate 20s linear 0s normal none infinite running;
+        }
+        .face{
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            background: rgba(173, 204, 230, 0.25);
+            box-sizing: border-box;
+            border: 2px solid rgb(81, 185, 255);
+        }
+        .left{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .right{
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .top{
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .bottom{
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        .front{
+            transform: translateZ(100px);
+        }
+        .back{
+            transform: rotateX(180deg) translateZ(100px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="stage">
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+    </div>
+</body>
+</html>
