@@ -1,0 +1,123 @@
+<!--此种方法的不足：切换图片时背景会变成白色，无法实现覆盖效果-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @keyframes img1{
+            from{ left: -500px; } to{ left: 0; }
+        }
+        @keyframes img2{
+            from{ top: 350px; } to{ top: 0; }
+        }
+        @keyframes img3{
+            from{ transform: scale(0.1); } to{ transform: scale(1); }
+        }
+        @keyframes img6{
+            from{ transform: scale(2); } to{ transform: scale(1); }
+        }
+        @keyframes img7{
+            from{ transform: scale(0.1) rotate(-360deg); } to{ transform: scale(1) rotate(0); }
+        }
+
+        body{
+            height: 100%;
+            width: 100%;
+            margin: 0 auto;
+
+        }
+        .container{
+            position: relative;
+            height: 784px;
+            width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+
+        }
+        .stage{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+
+        }
+        .button{
+            display: flex;
+            position: fixed;
+            left: 50%;
+            transform: translate(-50%);
+            height: 100px;
+            width: 1100px;
+            top: 20px;
+
+        }
+        .box{
+            height: 100px;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 20%;
+            background-size: 100%;
+            background-position-y: 100px;
+            opacity: 0.75;
+        }
+        .box:hover{
+            width: 25%;
+            opacity: 1;
+        }
+        #box1{
+            background-image: url('45092116_p1_master1200.jpg');
+            background-color: black;
+        }
+        #box2{
+            background-image: url('45092116_p2_master1200.jpg');
+        }
+        #box3{
+            background-image: url('45092116_p3_master1200.jpg');
+        }
+        #box4{
+            background-image: url('45092116_p6_master1200.jpg');
+        }
+        #box5{
+            background-image: url('45092116_p7_master1200.jpg');
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="stage" src="45092116_p8_master1200.jpg" alt="">
+
+    </div>
+    <div class="button">
+        <div class="box" id="box1" onclick="function1()"></div>
+        <div class="box" id="box2" onclick="function2()"></div>
+        <div class="box" id="box3" onclick="function3()"></div>
+        <div class="box" id="box4" onclick="function4()"></div>
+        <div class="box" id="box5" onclick="function5()"></div>
+        
+    </div>
+    <script>
+        function function1(){
+            document.getElementsByClassName("stage")[0].src = "45092116_p1_master1200.jpg";
+            document.getElementsByClassName("stage")[0].style.animation = "img1 0.5s ease-out";
+        }
+        function function2(){
+            document.getElementsByClassName("stage")[0].src = "45092116_p2_master1200.jpg";
+            document.getElementsByClassName("stage")[0].style.animation = "img2 0.5s ease-out";
+        }
+        function function3(){
+            document.getElementsByClassName("stage")[0].src = "45092116_p3_master1200.jpg";
+            document.getElementsByClassName("stage")[0].style.animation = "img3 1s ease-in";
+        }
+        function function4(){
+            document.getElementsByClassName("stage")[0].src = "45092116_p6_master1200.jpg";
+            document.getElementsByClassName("stage")[0].style.animation = "img6 1s ease-in";
+        }
+        function function5(){
+            document.getElementsByClassName("stage")[0].src = "45092116_p7_master1200.jpg";
+            document.getElementsByClassName("stage")[0].style.animation = "img7 0.7s ease-in-out";
+        }
+    </script>
+</body>
+</html>

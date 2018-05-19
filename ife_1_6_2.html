@@ -1,0 +1,140 @@
+<!--此种方法的不足：只能按顺序点击图片，否则被覆盖后就无法显示效果了-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @keyframes img1{
+            from{ left: -500px; } to{ left: 0; }
+        }
+        @keyframes img2{
+            from{ top: 350px; } to{ top: 0; }
+        }
+        @keyframes img3{
+            from{ transform: scale(0.1); } to{ transform: scale(1); }
+        }
+        @keyframes img6{
+            from{ transform: scale(2); } to{ transform: scale(1); }
+        }
+        @keyframes img7{
+            from{ transform: scale(0.1) rotate(-360deg); } to{ transform: scale(1) rotate(0); }
+        }
+
+        body{
+            height: 100%;
+            width: 100%;
+            margin: 0 auto;
+
+        }
+        .container{
+            position: relative;
+            height: 784px;
+            width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+
+        }
+        .stage{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+
+        }
+        .stage2{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: none;
+ 
+        }
+        .bottom{
+            display: flex;
+            position: fixed;
+            left: 50%;
+            transform: translate(-50%);
+            height: 100px;
+            width: 1100px;
+            bottom: 20px;
+
+        }
+        .box{
+            height: 100px;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 20%;
+            background-size: 100%;
+            background-position-y: 100px;
+            opacity: 0.75;
+        }
+        .box:hover{
+            width: 25%;
+            opacity: 1;
+        }
+        #box1{
+            background-image: url('45092116_p1_master1200.jpg');
+            background-color: black;
+        }
+        #box2{
+            background-image: url('45092116_p2_master1200.jpg');
+        }
+        #box3{
+            background-image: url('45092116_p3_master1200.jpg');
+        }
+        #box4{
+            background-image: url('45092116_p6_master1200.jpg');
+        }
+        #box5{
+            background-image: url('45092116_p7_master1200.jpg');
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="stage" src="45092116_p8_master1200.jpg" alt="">
+        <img class="stage2" id="img1" src="45092116_p1_master1200.jpg" alt="">
+        <img class="stage2" id="img2" src="45092116_p2_master1200.jpg" alt="">
+        <img class="stage2" id="img3" src="45092116_p3_master1200.jpg" alt="">
+        <img class="stage2" id="img6" src="45092116_p6_master1200.jpg" alt="">
+        <img class="stage2" id="img7" src="45092116_p7_master1200.jpg" alt="">
+
+    </div>
+    <div class="bottom">
+        <div class="box" id="box1" onclick="function1()"></div>
+        <div class="box" id="box2" onclick="function2()"></div>
+        <div class="box" id="box3" onclick="function3()"></div>
+        <div class="box" id="box4" onclick="function4()"></div>
+        <div class="box" id="box5" onclick="function5()"></div>
+        
+    </div>
+    <script>
+        function function1(){
+            document.getElementById("img1").style.display = "block";
+            document.getElementById("img1").src = "45092116_p1_master1200.jpg";
+            document.getElementById("img1").style.animation = "img1 0.5s ease-out";
+        }
+        function function2(){
+            document.getElementById("img2").style.display = "block";
+            document.getElementById("img2").src = "45092116_p2_master1200.jpg";
+            document.getElementById("img2").style.animation = "img2 0.5s ease-out";
+        }
+        function function3(){
+            document.getElementById("img3").style.display = "block";
+            document.getElementById("img3").src = "45092116_p3_master1200.jpg";
+            document.getElementById("img3").style.animation = "img3 1s ease-in";
+        }
+        function function4(){
+            document.getElementById("img6").style.display = "block";
+            document.getElementById("img6").src = "45092116_p6_master1200.jpg";
+            document.getElementById("img6").style.animation = "img6 1s ease-in";
+        }
+        function function5(){
+            document.getElementById("img7").style.display = "block";
+            document.getElementById("img7").src = "45092116_p7_master1200.jpg";
+            document.getElementById("img7").style.animation = "img7 0.7s ease-in-out";
+        }
+    </script>
+</body>
+</html>
