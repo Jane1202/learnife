@@ -104,11 +104,14 @@
         .word_box_four p{
             opacity: 0.5;
         }
-        .word_box_icon img{
+        .word_box_icon img,.img_icon img{
             width: auto;
             height: auto;
             max-height: 100%;
             max-width: 100%;
+        }
+        .img_text h4{
+            margin: 10px;
         }
         .back_img{
             position: relative;
@@ -383,7 +386,41 @@
             width: 100%;
             height: 14px;
         }
-        
+
+        .transparent{
+            display: none;
+            position: absolute;
+            background: #000000aa;
+            width: 384px;
+            height: 277.781px;
+        }
+        .img_text{
+            display: none;
+            /* display: flex; */
+            flex-direction: column;
+            position: absolute;
+            width: 384px;
+            height: 277.781px;
+            justify-content: center;
+            color: white;
+        }
+        .img_icon{
+            display: none;
+            /* display: flex; */
+            width: 70%;
+            height: 50px;
+            justify-content: space-around;
+        }
+        .word_box_two:hover{
+            cursor: pointer;
+        }
+        .word_box_two:hover .transparent{
+            display: block;
+        }
+        .word_box_two:hover .img_text,.img_icon{
+            display: flex;
+        }
+
     </style>
 </head>
 <body>
@@ -527,19 +564,57 @@
             <div class="word_9 flex padding">
                 <div class="word_box_two">
                     <img src="ife_2_9/Userpic 1.png" alt="">
+                    <div class="transparent"></div>
+                    <div class="img_text center">
+                        <h4>Ethan Dutton</h4>
+                        <div class="word_signUpForm_light upper">Senior Visual Designer</div>
+                        <div class="img_icon center">
+                            <img src="ife_2_9/Facebook.png" alt="">
+                            <img src="ife_2_9/Twitter.png" alt="">
+                            <img src="ife_2_9/Instagram.png" alt="">
+                        </div>
+                    </div>
                 </div>
                 <div class="word_box_two">
                     <img src="ife_2_9/Userpic 2.png" alt="">
+                    <div class="transparent"></div>
+                    <div class="img_text center">
+                        <h4>Ethan Dutton</h4>
+                        <div class="word_signUpForm_light upper">Senior Visual Designer</div>
+                        <div class="img_icon center">
+                            <img src="ife_2_9/Facebook.png" alt="">
+                            <img src="ife_2_9/Twitter.png" alt="">
+                            <img src="ife_2_9/Instagram.png" alt="">
+                        </div>
+                    </div>
                 </div>
                 <div class="word_box_two">
                     <img src="ife_2_9/Userpic 3.png" alt="">
+                    <div class="transparent"></div>
+                    <div class="img_text center">
+                        <h4>Ethan Dutton</h4>
+                        <div class="word_signUpForm_light upper">Senior Visual Designer</div>
+                        <div class="img_icon center">
+                            <img src="ife_2_9/Facebook.png" alt="">
+                            <img src="ife_2_9/Twitter.png" alt="">
+                            <img src="ife_2_9/Instagram.png" alt="">
+                        </div>
+                    </div>
                 </div>
                 <div class="word_box_two">
                     <img src="ife_2_9/Userpic 4.png" alt="">
+                    <div class="transparent"></div>
+                    <div class="img_text center">
+                        <h4>Ethan Dutton</h4>
+                        <div class="word_signUpForm_light upper">Senior Visual Designer</div>
+                        <div class="img_icon center">
+                            <img src="ife_2_9/Facebook.png" alt="">
+                            <img src="ife_2_9/Twitter.png" alt="">
+                            <img src="ife_2_9/Instagram.png" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- <div>Ethan Dutton</div>
-            <div>Senior Visual Designer</div> -->
         </div>
 
     </div>
