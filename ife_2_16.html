@@ -23,15 +23,13 @@
         font-family: "微软雅黑";
         text-shadow: 0 0 8px #0066cccc;
     }
-    .pos{
+    #stage{
         position: relative;
         margin: 0 auto;
         height: fit-content;
         width: fit-content;
         padding-left: 20px;
-        padding-right: 20px;        
-    }
-    #stage{
+        padding-right: 20px;    
         border: 2px solid black;
         border-top: 1px solid;
         border-bottom: 4px solid;
@@ -70,39 +68,27 @@
     a{
         display: inline-box;
         text-decoration: none;
-        color: black;
+        color: #333;
         transition: 0.5s ease-in-out;
     }
     a:hover{
         color: white;
     }
-    input{
-        margin-bottom: 20px;
-        padding: 10px;
-        background: transparent;
-        border: 2px solid white;
-        color: white;
-        font-family: "微软雅黑";
-        font-size: 0.75em;
-        font-weight: bold;
-        border-radius: 5px;
-    }
-    #name{
-        background: #ffffff55;
-        color: gray;
-    }
     #p,#hobby{
         display: inline;
+    }
+    #hobby{
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+    }
+    #hobby:hover{
+        letter-spacing: 2px;
     }
     </style>
 </head>
 <body>        
     <div id="container">
-        <div id="input" class="pos">
-            <input id="name" type="text" placeholder="你好！请问怎么称呼？">
-            <input id="submit" type="submit" value="确认">
-        </div>
-        <div id="stage" class="pos">
+        <div id="stage">
             <h1>简历</h1>
             <p><span>姓名：</span>Jane</p>
             <p><span>年龄：</span>20</p>
@@ -126,11 +112,15 @@
         </div>
     </div>
     <script>
-        document.getElementById("submit").onclick = function(){
-            alert("你好 " + document.getElementById("name").value +"！\n欢迎你来看我的简历！");
+        window.onload = function(){
+            name = prompt("你好！请问怎么称呼？");
+            alert("你好 " + name +"！\n欢迎你来看我的简历！");
         }
         document.getElementById("hobby").onclick = function(){
             document.getElementById("hobby").innerHTML = "画画 PS 手工 Web前端 夜跑";
+            document.getElementById("hobby").onmouseover =function(){
+                document.getElementById("hobby").style.letterSpacing = "0";
+            }
         }
     </script>
 </body>
