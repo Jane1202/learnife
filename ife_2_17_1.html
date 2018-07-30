@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+    <input id="first-number" type="number" value="0" placeholder="第一个数字">
+    <input id="second-number" type="number" value="0" placeholder="第二个数字">
+    <button id="add-btn" onclick="cal(0)">加</button>
+    <button id="minus-btn" onclick="cal(1)">减</button>
+    <button id="times-btn" onclick="cal(2)">乘</button>
+    <button id="divide-btn" onclick="cal(3)">除</button>
+    <p id="result">运算结果</p>
+    <script>
+        var fir_num = document.getElementById('first-number');
+        var sec_num = document.getElementById('second-number');
+        var btn = document.getElementsByTagName('button');
+        function cal(i){
+            if (fir_num.value == '' || sec_num.value == ''){
+                alert('数字不能为空！');
+            }
+            else if(i==0){
+                var add = Number(document.getElementById('first-number').value) + Number(document.getElementById('second-number').value);
+                var add_value =  Math.round(add*1000)/1000;
+                document.getElementById('result').innerHTML = "运算结果：" + add_value;
+            }
+            else if(i==1){
+                var minus = Number(document.getElementById('first-number').value) - Number(document.getElementById('second-number').value);
+                var minus_value =  Math.round(minus*1000)/1000;
+                document.getElementById('result').innerHTML = "运算结果：" + minus_value;
+            }
+            else if(i==2){
+                var times = Number(document.getElementById('first-number').value) * Number(document.getElementById('second-number').value);
+                var times_value =  Math.round(times*1000)/1000;
+                document.getElementById('result').innerHTML = "运算结果：" + times_value;
+            }
+            else{
+                if (sec_num.value == '0'){
+                    alert('除数不能为0！');
+                }
+                else{
+                    var divide = Number(document.getElementById('first-number').value) / Number(document.getElementById('second-number').value);
+                    var divide_value =  Math.round(divide*1000)/1000;
+                    document.getElementById('result').innerHTML = "运算结果：" + divide_value;                
+                }
+            }
+        }
+    </script>
+</body>
+</html>

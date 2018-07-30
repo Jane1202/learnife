@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+    <style>
+html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+}
+div{
+    position: relative;
+    margin: 50px auto;
+    height: 400px;
+    width: 800px;
+}    
+table{
+    padding: 10px;
+    border: 1px dashed saddlebrown;
+    border-radius: 10px;
+    color: saddlebrown;
+}
+td{
+    padding: 5px 10px;
+    border: 1px solid salmon;
+    border-radius: 5px;
+}
+    </style>
+</head>
+
+<body> 
+    <div>
+        <table border="1" id="tab">
+        </table>
+    </div>
+
+    <script>
+
+var tab = document.getElementById("tab");
+for(var i=1;i<=9;i++){
+    var row = tab.insertRow(i-1);
+
+    var str = "";
+
+    for(var j=1;j<=i;j++){
+        str += (i + "*" + j + "=" + i*j + "\t");
+
+        var cell = row.insertCell(j-1);
+        cell.innerHTML = i + "*" + j + "=" + i*j + "\t";
+    }
+    console.log(str);
+}
+
+    </script>
+</body>
+</html>
